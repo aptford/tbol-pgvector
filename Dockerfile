@@ -1,5 +1,5 @@
-ARG PG_MAJOR=17
-FROM postgres:$PG_MAJOR
+ARG PG_MAJOR=15
+FROM flyio/postgres-flex:15.8
 ARG PG_MAJOR
 
 COPY . /tmp/pgvector
@@ -18,3 +18,4 @@ RUN apt-get update && \
 		apt-get autoremove -y && \
 		apt-mark unhold locales && \
 		rm -rf /var/lib/apt/lists/*
+
